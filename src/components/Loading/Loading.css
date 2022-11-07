@@ -1,0 +1,7 @@
+.loading-area{
+   background: #FFF;
+   height: 590px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+ }

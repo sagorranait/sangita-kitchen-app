@@ -19,3 +19,17 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.kitchen-btn{
+    font-weight: 700;
+    font-size: 14px;
+    color: #FFFFFF;
+    padding: 8px 15px;
+    background: #17696A;
+    box-shadow: 0px 3px 6px rgb(41 41 41 / 20%);
+    text-decoration: none;
+}
+
+.kitchen-btn:hover{
+  color: #FFFFFF;
+}
