@@ -1,0 +1,149 @@
+.navbar {
+   background: #fff;
+   box-shadow: 0px 3px 20px rgb(0 0 0 / 9%);
+   padding: 20px !important;
+}
+
+.navbar .kitchen-logo{
+   width: 190px;
+   height: 60px;
+}
+
+.navbar-nav .nav-link {
+   font-weight: 600;
+   color: #5C5C5C !important;
+   border-bottom: 2px solid transparent;
+   margin-right: 15px;
+}
+
+.navbar-nav .nav-link.active{
+   border-bottom: 2px solid #FFC000;
+}
+
+.nav-user .nav-link {
+   background: #17696A;
+   color: #fff !important;
+   padding: 6px 20px !important;
+   border-radius: 4px;
+   border-bottom: 0px;
+}
+
+.nav-user .nav-link.profile{
+   padding: 2px !important;
+   border-bottom: 0px;
+}
+
+.nav-user .nav-link.profile .user-pic{
+   width: 36px;
+   height: 36px;
+   border-radius: 50px;
+   overflow: hidden;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.nav-user .nav-link.profile .user-pic img{
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+}
+
+/* Responsive Query */
+@media only screen and (max-width: 575.98px) {
+   .navbar {
+      padding: 12px !important;
+  }
+
+  .navbar-nav .nav-link.active {
+      margin-bottom: 5px;
+   }
+
+  .navbar img {
+      width: 25px;
+      height: 35px;
+   }
+
+   button.navbar-toggler {
+      border: none;
+      font-size: 20px;
+  }
+
+  button:focus:not(:focus-visible) {
+      outline: 0;
+      box-shadow: none;
+   }
+
+   div#basic-navbar-nav {
+      padding: 10px;
+  }
+
+  .button-switch {
+   margin-top: 10px;
+   margin-bottom: 15px;
+}
+
+.nav-user .nav-link {
+   width: 100px;
+}
+}
+@media screen and (min-width: 576px) and (max-width: 767.98px) {
+   .navbar {
+      padding: 12px !important;
+  }
+
+  .navbar-nav .nav-link.active {
+   margin-bottom: 5px;
+}
+
+  .navbar img {
+      width: 25px;
+      height: 35px;
+   }
+
+   button.navbar-toggler {
+      border: none;
+      font-size: 20px;
+  }
+
+  button:focus:not(:focus-visible) {
+      outline: 0;
+      box-shadow: none;
+   }
+
+   div#basic-navbar-nav {
+      padding: 10px;
+  }
+
+  .button-switch {
+   margin-top: 10px;
+   margin-bottom: 15px;
+}
+
+.nav-user .nav-link {
+   width: 100px;
+}
+}
+@media screen and (min-width: 768px) and (max-width: 992.98px) {
+   .navbar-collapse {
+      padding: 20px 0 0;
+  }
+
+  .navbar-nav .nav-link.active {
+   margin-bottom: 6px;
+}
+
+  .button-switch {
+      margin-top: 8px;
+      margin-bottom: 15px;
+   }
+
+   .nav-user .nav-link {
+      width: 100px;
+   }
+
+   button:focus:not(:focus-visible) {
+      outline: 0;
+      box-shadow: none;
+   }
+}
