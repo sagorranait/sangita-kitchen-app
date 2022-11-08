@@ -2,3 +2,7 @@
    background: #fff;
    padding: 50px 0px;
 }
+
+#brands .brand{
+   cursor: pointer;
+}

@@ -1,0 +1,28 @@
+#instagramArea{
+   background: #fff;
+   padding: 50px 0px 0px;
+}
+
+#instagramArea .followed-link{}
+
+#instagramArea .followed-link p{
+   font-weight: 700;
+   font-size: 15px;
+   line-height: 150%;
+   text-transform: uppercase;
+   color: #1E212C;
+   margin-bottom: 13px;
+}
+
+#instagramArea .followed-link h2{
+   font-weight: 900;
+   font-size: 36px;
+   line-height: 130%;
+   color: #1E212C;
+   margin-bottom: 60px;
+}
+
+#instagramArea .followed-link button svg{
+   font-size: 18px;
+   margin: -2px 8px 0px 0px;
+}
