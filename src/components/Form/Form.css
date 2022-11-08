@@ -54,7 +54,10 @@
 #emailInput, 
 #passwordInput,
 #nameInput,
-#urlInput {
+#urlInput,
+#selectInput,
+#numberInput,
+#textareaInput {
   background: #E5E8ED;
   border: 2px solid #17696A;
   border-radius: 4px;
@@ -66,7 +69,10 @@
 #emailInput:focus, 
 #passwordInput:focus,
 #nameInput:focus,
-#urlInput:focus {
+#urlInput:focus,
+#selectInput:focus,
+#numberInput:focus,
+#textareaInput:focus {
   outline: 0;
   box-shadow: none;
 }

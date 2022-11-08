@@ -2,11 +2,12 @@ import { createBrowserRouter } from "react-router-dom";
 
 import App from "./App";
 import RequireAuth from "./RequireAuth";
+import Profile from "./pages/Profile/Profile";
 import SignIn from "./pages/SignIn/SignIn";
 import SignUp from "./pages/SignUp/SignUp";
 import DashBoard from "./pages/DashBoard/DashBoard";
+import AddService from "./pages/AddService/AddService";
 import ErrorPage from "./components/ErrorPage/ErrorPage";
-import Profile from "./pages/Profile/Profile";
 
 const routers = createBrowserRouter([
    { 
@@ -22,7 +23,7 @@ const routers = createBrowserRouter([
             element: <RequireAuth><DashBoard/></RequireAuth>,
             children: [
                {path: 'profile', element: <RequireAuth><Profile/></RequireAuth>},
-               {path: 'addService', element: <p>addService</p>},
+               {path: 'addService', element: <RequireAuth><AddService/></RequireAuth>},
                {path: 'reviews', element: <p>reviews</p>}
             ]
          }

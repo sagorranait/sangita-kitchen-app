@@ -1,3 +1,5 @@
-.update-profile input {
+.update-profile input, 
+.update-profile select, 
+.update-profile textarea {
    background: #fff !important;
 }
