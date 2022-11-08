@@ -10,14 +10,15 @@ import AddService from "./pages/AddService/AddService";
 import ErrorPage from "./components/ErrorPage/ErrorPage";
 import Reviews from "./pages/Reviews/Reviews";
 import Home from "./pages/Home/Home";
+import Blog from "./pages/Blog/Blog";
 
 const routers = createBrowserRouter([
    { 
       path: '/', 
       element: <App/>,
       children: [
-         { index: true, element: <Home/>, },
-         { path: 'blogs', element: <p>blog</p> },
+         { index: true, element: <Home/> },
+         { path: 'blogs', element: <Blog/> },
          { path: 'signin', element: <SignIn/> },
          { path: 'signup', element: <SignUp/> },
          { 

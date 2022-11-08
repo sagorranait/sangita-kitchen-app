@@ -1,0 +1,32 @@
+.accordion-item {
+   border: 1px solid #00bfff !important;
+   margin-bottom: 15px;
+   border-radius: 10px;
+}
+
+button.accordion-button {
+   background-color: #b1b1b100;
+   color: #5C5C5C;
+   font-weight: 600;
+}
+
+button.accordion-button:not(.collapsed) {
+   background-color: #b1b1b100;
+   color: #5C5C5C;
+   font-weight: 600;
+   box-shadow: none;
+}
+
+button.accordion-button:focus {
+   outline: 0;
+   box-shadow: none;
+   background-color: #b1b1b100;
+   color: #5C5C5C;
+   font-weight: 600;
+}
+
+.accordion-body {
+   font-size: 15px;
+   line-height: 25px;
+   color: #5C5C5C;
+}
