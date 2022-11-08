@@ -6,15 +6,15 @@ import { StateContext } from './StateProvider';
 
 
 function RequireAuth({ children }) {
-  const {student, loading} = useContext(StateContext);
+  const {user, loading} = useContext(StateContext);
    let location = useLocation();
 
   if (loading) {
     return <Loading/>;
   }
 
-   if (!student) {
-     return <Navigate to="/signin" state={{ from: location }} replace />
+   if (!user) {
+     return <Navigate to="/" state={{ from: location }} replace />
    }
  
    return children;

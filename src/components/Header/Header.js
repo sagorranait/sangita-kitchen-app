@@ -39,7 +39,7 @@ function Header() {
         <div className='nav-user navbar-nav'>
             {
                user?.email || user?.displayName ? 
-                  <Link className='nav-link profile' to='/profile'>
+                  <Link className='nav-link profile' to='/dashboard/profile'>
                      <div className='user-pic'>
                         <img src={user?.photoURL} alt="user" />
                      </div>

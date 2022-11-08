@@ -1,0 +1,60 @@
+#dashboard{
+   background: #E5E8ED;
+   padding: 50px 0;
+}
+
+#dashboard .sidebar{
+   width: 100%;
+   background: #FFFFFF;
+   border: 1px solid #E5E8ED;
+   box-shadow: 0px 80px 80px -20px rgba(154, 156, 165, 0.08), 0px 30px 24px -10px rgba(154, 156, 165, 0.05), 0px 12px 10px -6px rgba(154, 156, 165, 0.04), 0px 4px 4px -4px rgba(30, 33, 44, 0.03);
+   border-radius: 4px;
+}
+
+#dashboard .sidebar .user-info{
+   padding: 20px;
+   text-align: center;
+}
+
+#dashboard .sidebar .user-info img{
+   width: 100px;
+   height: 100px;
+   border-radius: 100px;
+   object-fit: cover;
+}
+
+#dashboard .sidebar .user-info h2{
+   font-weight: 700;
+   font-size: 20px;
+   line-height: 150%;
+   color: #424551;
+   margin: 0;
+   padding: 5px 0 0;
+}
+
+#dashboard .sidebar .user-info p{
+   font-size: 15px;
+   line-height: 160%;
+   color: #787A80;
+   margin: 0;
+}
+
+#dashboard .sidebar .navs .nav-item {
+   font-size: 16px;
+   line-height: 160%;
+   color: #424551;
+   display: block;
+   padding: 12px 20px;
+   border-bottom: 1px solid #E5E8ED;
+   text-decoration: none;
+   cursor: pointer;
+}
+
+#dashboard .sidebar .navs .nav-item svg{
+   margin-top: -2px;
+}
+
+#dashboard .sidebar .navs .nav-item.active{
+   background: #17696A;
+   color: #FFFFFF;
+}

@@ -50,6 +50,27 @@
    padding-bottom: 10px;
 }
 
+/* Input Field Design */
+#emailInput, 
+#passwordInput,
+#nameInput,
+#urlInput {
+  background: #E5E8ED;
+  border: 2px solid #17696A;
+  border-radius: 4px;
+  width: 100%;
+  padding: 15px 20px;
+  margin-top: 15px;
+}
+
+#emailInput:focus, 
+#passwordInput:focus,
+#nameInput:focus,
+#urlInput:focus {
+  outline: 0;
+  box-shadow: none;
+}
+
 /* Responsive Media Query */
 @media only screen and (max-width: 575.98px) {
    #signInArea .signin-inputs {

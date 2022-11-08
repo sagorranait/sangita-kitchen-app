@@ -17,7 +17,7 @@
 }
 
 .navbar-nav .nav-link.active{
-   border-bottom: 2px solid #FFC000;
+   border-bottom: 2px solid #03CEA4;
 }
 
 .nav-user .nav-link {
@@ -29,7 +29,7 @@
 }
 
 .nav-user .nav-link.profile{
-   background: #FFC000;
+   background: #03CEA4;
    padding: 2px !important;
    border-bottom: 0px;
    border-radius: 50px;
