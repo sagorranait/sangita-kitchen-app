@@ -44,7 +44,7 @@ const DashBoard = () => {
                         to='/dashboard/addService' 
                         className={`nav-item ${({ isActive }) => isActive ? "active" : ""}` }
                      >
-                        <BiShoppingBag/> Add Service
+                        <BiShoppingBag/> Add New Service
                      </NavLink>
                      <NavLink 
                         to='/dashboard/reviews' 

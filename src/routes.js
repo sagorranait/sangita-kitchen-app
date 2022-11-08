@@ -6,6 +6,7 @@ import SignIn from "./pages/SignIn/SignIn";
 import SignUp from "./pages/SignUp/SignUp";
 import DashBoard from "./pages/DashBoard/DashBoard";
 import ErrorPage from "./components/ErrorPage/ErrorPage";
+import Profile from "./pages/Profile/Profile";
 
 const routers = createBrowserRouter([
    { 
@@ -20,7 +21,7 @@ const routers = createBrowserRouter([
             path: 'dashboard',
             element: <RequireAuth><DashBoard/></RequireAuth>,
             children: [
-               {path: 'profile', element: <p>profile</p>},
+               {path: 'profile', element: <RequireAuth><Profile/></RequireAuth>},
                {path: 'addService', element: <p>addService</p>},
                {path: 'reviews', element: <p>reviews</p>}
             ]
