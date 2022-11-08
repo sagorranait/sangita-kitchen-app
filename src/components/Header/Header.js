@@ -4,14 +4,27 @@ import {
    Nav, 
    Navbar,
 } from 'react-bootstrap';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { StateContext } from '../../StateProvider';
 import { FaBars } from "react-icons/fa";
 import Logo from '../../assets/logo.png';
+import toast from 'react-hot-toast';
 import './Header.css';
 
 function Header() {
-  const {user} = useContext(StateContext);
+  const navigate = useNavigate();
+  const {user, signOutUser} = useContext(StateContext);
+
+  const userSignOut = () => {
+      signOutUser()
+      .then(()=>{
+         navigate('/');
+      })
+      .catch(error => {
+         const errorMessage = error.message;
+         toast.error(errorMessage?.split('/')[1]?.replace(').', '').split('-').join(' '));
+      });
+  }
 
   return (
    <Navbar expand="lg">
@@ -35,15 +48,35 @@ function Header() {
             >
                Blog
             </NavLink>
+            {
+               user ? 
+               <>
+                  <NavLink 
+                     to='/dashboard/profile' 
+                     className={`nav-link ${({ isActive }) => isActive ? "active" : ""}` }
+                  >
+                     My Profile
+                  </NavLink>
+                  <NavLink 
+                     to='/dashboard/addService' 
+                     className={`nav-link ${({ isActive }) => isActive ? "active" : ""}` }
+                  >
+                     Add Service
+                  </NavLink>
+                  <NavLink 
+                     to='/dashboard/reviews' 
+                     className={`nav-link ${({ isActive }) => isActive ? "active" : ""}` }
+                  >
+                     My Reviews
+                  </NavLink>
+               </> 
+               : ''
+            }
           </Nav>
         <div className='nav-user navbar-nav'>
             {
                user?.email || user?.displayName ? 
-                  <Link className='nav-link profile' to='/dashboard/profile'>
-                     <div className='user-pic'>
-                        <img src={user?.photoURL} alt="user" />
-                     </div>
-                  </Link>
+               <Link className='nav-link' to='/signin' onClick={userSignOut}>Sign Out</Link>
                : <Link className='nav-link' to='/signin'>Sign In</Link>
             }
         </div>

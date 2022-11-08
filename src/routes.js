@@ -9,13 +9,14 @@ import DashBoard from "./pages/DashBoard/DashBoard";
 import AddService from "./pages/AddService/AddService";
 import ErrorPage from "./components/ErrorPage/ErrorPage";
 import Reviews from "./pages/Reviews/Reviews";
+import Home from "./pages/Home/Home";
 
 const routers = createBrowserRouter([
    { 
       path: '/', 
       element: <App/>,
       children: [
-         { index: true, element: <p>Home</p>, },
+         { index: true, element: <Home/>, },
          { path: 'blogs', element: <p>blog</p> },
          { path: 'signin', element: <SignIn/> },
          { path: 'signup', element: <SignUp/> },
