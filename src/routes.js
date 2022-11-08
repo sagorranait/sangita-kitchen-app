@@ -8,6 +8,7 @@ import SignUp from "./pages/SignUp/SignUp";
 import DashBoard from "./pages/DashBoard/DashBoard";
 import AddService from "./pages/AddService/AddService";
 import ErrorPage from "./components/ErrorPage/ErrorPage";
+import Reviews from "./pages/Reviews/Reviews";
 
 const routers = createBrowserRouter([
    { 
@@ -22,9 +23,18 @@ const routers = createBrowserRouter([
             path: 'dashboard',
             element: <RequireAuth><DashBoard/></RequireAuth>,
             children: [
-               {path: 'profile', element: <RequireAuth><Profile/></RequireAuth>},
-               {path: 'addService', element: <RequireAuth><AddService/></RequireAuth>},
-               {path: 'reviews', element: <p>reviews</p>}
+               {
+                  path: 'profile', 
+                  element: <RequireAuth><Profile/></RequireAuth>
+               },
+               {
+                  path: 'addService', 
+                  element: <RequireAuth><AddService/></RequireAuth>
+               },
+               {
+                  path: 'reviews', 
+                  element: <RequireAuth><Reviews/></RequireAuth>
+               }
             ]
          }
       ],

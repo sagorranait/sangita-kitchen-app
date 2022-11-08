@@ -5,20 +5,20 @@ const AddService = () => {
   return (
     <div className='new-service outlet-page'>
       <h2>Add New Service</h2>
-      <form className='update-profile'>
+      <form className='add-service update-profile'>
       <Form.Group className="mb-3">
           <Form.Control type="text" id="nameInput" placeholder="Title" />
       </Form.Group>
-      <Form.Group className="mb-3">
+      <Form.Group>
           <Form.Control type="url" id="urlInput" placeholder="Photo Url" />
       </Form.Group>
-      <Form.Select id="selectInput" className="mb-3">
+      <select id="selectInput">
          <option value="5">5 ★</option>
          <option value="4">4 ★</option>
          <option value="3">3 ★</option>
          <option value="2">2 ★</option>
          <option value="1">1 ★</option>
-      </Form.Select>
+      </select>
       <Form.Group className="mb-3">
           <Form.Control type="number" id="numberInput" placeholder="Price" />
       </Form.Group>
