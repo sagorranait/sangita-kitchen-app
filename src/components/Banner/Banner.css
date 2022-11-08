@@ -1,0 +1,30 @@
+#banner{
+   height: 550px;
+   padding: 50px 0px;
+   background-position: center center;
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+
+#banner .banner-content{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   height: 450px;
+   border: 2px dashed #fff;
+}
+
+#banner .banner-content h1{
+   font-weight: 900;
+   font-size: 50px;
+   line-height: 130%;
+   color: #ffffff;
+   text-transform: uppercase;
+}
+
+#banner .banner-content p{
+   font-size: 14px;
+   line-height: 130%;
+   color: #ffffffbd;
+}
