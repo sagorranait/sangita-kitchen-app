@@ -1,14 +1,26 @@
 import { useContext } from 'react';
 import { BiUser, BiShoppingBag, BiStar, BiArrowFromRight } from "react-icons/bi";
 import { Col, Container, Row } from 'react-bootstrap';
-import { NavLink, Outlet } from 'react-router-dom';
+import { NavLink, Outlet, useNavigate } from 'react-router-dom';
 import { StateContext } from '../../StateProvider';
+import toast from 'react-hot-toast';
 import './DashBoard.css'
 
 const DashBoard = () => {
-  const {user} = useContext(StateContext);
+  const {user, signOutUser} = useContext(StateContext);
+  const navigate = useNavigate();
 
-  console.log(user)
+  const userSignOut = () => {
+   signOutUser()
+   .then(()=>{
+      navigate('/signin');
+   })
+   .catch(error => {
+      const errorMessage = error.message;
+      toast.error(errorMessage?.split('/')[1]?.replace(').', '').split('-').join(' '));
+   });
+  }
+
   return (
     <section id='dashboard'>
          <Container>
@@ -40,7 +52,7 @@ const DashBoard = () => {
                      >
                         <BiStar/> My Reviews
                      </NavLink>
-                     <li className='nav-item'><BiArrowFromRight/> Sign Out</li>
+                     <li className='nav-item' onClick={userSignOut}><BiArrowFromRight/> Sign Out</li>
                      </div>
                   </div>
                </Col>
