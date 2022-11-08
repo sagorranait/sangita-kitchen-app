@@ -29,8 +29,10 @@
 }
 
 .nav-user .nav-link.profile{
+   background: #FFC000;
    padding: 2px !important;
    border-bottom: 0px;
+   border-radius: 50px;
 }
 
 .nav-user .nav-link.profile .user-pic{

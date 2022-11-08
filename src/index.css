@@ -20,7 +20,9 @@ code {
     monospace;
 }
 
+/* Button Design */
 .kitchen-btn{
+    border: 0;
     font-weight: 700;
     font-size: 14px;
     color: #FFFFFF;
@@ -32,4 +34,25 @@ code {
 
 .kitchen-btn:hover{
   color: #FFFFFF;
+}
+
+/* Input Field Design */
+#emailInput, 
+#passwordInput,
+#nameInput,
+#urlInput {
+  background: #E5E8ED;
+  border: 2px solid #17696A;
+  border-radius: 4px;
+  width: 100%;
+  padding: 15px 20px;
+  margin-top: 15px;
+}
+
+#emailInput:focus, 
+#passwordInput:focus,
+#nameInput:focus,
+#urlInput:focus {
+  outline: 0;
+  box-shadow: none;
 }

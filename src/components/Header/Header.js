@@ -2,9 +2,7 @@ import { useContext } from 'react';
 import { 
    Container, 
    Nav, 
-   Navbar, 
-   OverlayTrigger, 
-   Tooltip 
+   Navbar,
 } from 'react-bootstrap';
 import { Link, NavLink } from 'react-router-dom';
 import { StateContext } from '../../StateProvider';
@@ -14,13 +12,6 @@ import './Header.css';
 
 function Header() {
   const {user} = useContext(StateContext);
-
-  const renderTooltip = (props) => (
-      <Tooltip id="button-tooltip" {...props}>
-         {user?.displayName}
-      </Tooltip>
-   );
-
 
   return (
    <Navbar expand="lg">
@@ -48,17 +39,11 @@ function Header() {
         <div className='nav-user navbar-nav'>
             {
                user?.email || user?.displayName ? 
-               <OverlayTrigger
-                  placement="bottom"
-                  delay={{ show: 250, hide: 400 }}
-                  overlay={renderTooltip}
-               >
                   <Link className='nav-link profile' to='/profile'>
                      <div className='user-pic'>
                         <img src={user?.photoURL} alt="user" />
                      </div>
                   </Link>
-               </OverlayTrigger>
                : <Link className='nav-link' to='/signin'>Sign In</Link>
             }
         </div>
