@@ -1,0 +1,81 @@
+.service-details{
+   background: #fff;
+   padding: 50px 0;
+}
+
+.service-details .details {
+   width: 750px;
+   margin: 0 auto;
+}
+
+.service-details .details .content h3{
+   font-weight: 900;
+   font-size: 36px;
+   line-height: 130%;
+   color: #1E212C;
+   margin: 30px 0 10px;
+}
+
+.service-details .details .content img{
+   width: 100%;
+}
+
+.service-details .details .content p{
+   font-size: 16px;
+   line-height: 160%;
+   color: #424551;
+   margin: 10px 0;
+}
+
+.service-details .details .content .priceAndReviews{
+   display: flex;
+   align-items: center;
+   gap: 55px;
+}
+
+.service-details .details .content .priceAndReviews h4{
+   font-weight: 600;
+   font-size: 23px;
+   line-height: 130%;
+   color: #17696A;
+}
+
+.service-details .details .content .priceAndReviews h5{
+   font-weight: 600;
+   font-size: 23px;
+   line-height: 130%;
+}
+
+.service-details .details .content .priceAndReviews h5 svg{
+   margin-top: -3px;
+   color: #FFD700;
+}
+
+.service-details .details .content a {
+   display: inline-block;
+   margin-top: 23px;
+}
+
+.service-details .details .reviews{
+   width: 100%;
+   display: flex;
+   align-items: flex-start;
+   border-top: 1px solid #E5E8ED;
+   gap: 15px;
+   margin: 30px 0;
+   padding-top: 30px;
+}
+
+.service-details .details .reviews .user-review {
+   height: 41px;
+}
+
+.service-details .details .reviews .user-img img{
+   width: 70px;
+   height: 70px;
+   border-radius: 100px;
+
+}
+
+
+ 

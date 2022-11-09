@@ -1,0 +1,50 @@
+.service-details .details .reviews .review-form{
+   flex: 1;
+}
+
+.review-form textarea{
+   background: #fff !important;
+}
+
+.review-radio {
+   float: left;
+   margin: 0 5px 0 0;
+   width: 47px;
+   height: 40px;
+   position: relative;
+   cursor: pointer;
+ }
+ 
+ .review-radio label,
+ .review-radio input {
+   display: block;
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+ }
+ 
+ .review-radio input[type="radio"] {
+   opacity: 0.011;
+   z-index: 100;
+   cursor: pointer;
+ }
+ 
+ .review-radio input[type="radio"]:checked + label {
+   background: #20b8be;
+   border-radius: 50px !important;
+ }
+ 
+ .review-radio label {
+   cursor: pointer;
+   z-index: 90;
+   line-height: 1.8em;
+   padding: 8px 10px;
+   border-radius: 50px !important;
+   text-align: center;
+ }
+
+ .review-radio label svg{
+   margin-top: -2px;
+ }

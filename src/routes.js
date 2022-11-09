@@ -12,6 +12,7 @@ import Services from "./pages/Services/Services";
 import DashBoard from "./pages/DashBoard/DashBoard";
 import AddService from "./pages/AddService/AddService";
 import ErrorPage from "./components/ErrorPage/ErrorPage";
+import ServiceDetails, { getServiceDetails } from "./pages/ServiceDetails/ServiceDetails";
 
 const routers = createBrowserRouter([
    { 
@@ -23,6 +24,7 @@ const routers = createBrowserRouter([
          { path: 'signin', element: <SignIn/> },
          { path: 'signup', element: <SignUp/> },
          { path: 'services', element: <Services/>},
+         { path: '/service/:id', element: <ServiceDetails/>, loader: getServiceDetails},
          { 
             path: 'dashboard',
             element: <RequireAuth><DashBoard/></RequireAuth>,
