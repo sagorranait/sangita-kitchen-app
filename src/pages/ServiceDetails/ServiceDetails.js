@@ -33,7 +33,7 @@ function ServiceDetails() {
          },
          rating: userRating,
          review: userReview,
-         date: new Date(),
+         date: `${new Date()}`,
      }
 
      fetch('http://localhost:5000/review', {
@@ -58,11 +58,9 @@ function ServiceDetails() {
    useEffect(() => {
       fetch(`http://localhost:5000/review/${_id}`)
       .then(res => res.json())
-      .then(data => console.log(data))
+      .then(data => setServiceReviews(data))
       .catch(error => console.log(error));
    }, [_id])
-
-   console.log(serviceReviews);
 
   return (
    <div className='service-details'>

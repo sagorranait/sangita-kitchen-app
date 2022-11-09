@@ -7,6 +7,27 @@
    border-bottom: 0px;
 }
 
+.review h3{
+   font-size: 16px;
+   line-height: 160%;
+   color: #787A80;
+   margin-bottom: 20px;
+}
+
+.review h3 span{
+   color: #17696A;
+   font-weight: 700;
+}
+
+.review .action-button{
+   flex: 1;
+   text-align: right;
+}
+
+.review .action-button button{
+   margin-left: 10px;
+}
+
 .review .user-info{
    display: flex;
    align-items: center;
@@ -14,9 +35,9 @@
    gap: 10px;
 }
 
-.review .user-info .user-img{
-   width: 70px;
-   height: 70px;
+.review .user-info .user-img {
+   width: 60px;
+   height: 60px;
    background: #03CEA4;
    border-radius: 100px;
    padding: 2px;
@@ -31,7 +52,7 @@
 
 .review .user-info .user-content h3{
    font-weight: 700;
-   font-size: 18px;
+   font-size: 16px;
    line-height: 150%;
    color: #1E212C;
    margin: 0;

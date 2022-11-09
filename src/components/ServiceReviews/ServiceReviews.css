@@ -12,3 +12,10 @@
    color: #1E212C;
    margin-bottom: 25px;
 }
+
+.service-reviews h6{
+   text-align: center;
+   color: #787A80;
+   font-weight: 400;
+   font-size: 15px;
+}
