@@ -22,6 +22,7 @@ const SignIn = () => {
     .then((_) => {
       setLogging(false);
       toast.success('Successfully Login.');
+      e.target.reset();
       navigate(from, { replace: true });
     })
     .catch((error) => {
@@ -32,8 +33,6 @@ const SignIn = () => {
     .finally(()=>{
       setLoading(false);
     });
-
-    e.target.reset();
   }
 
   return (

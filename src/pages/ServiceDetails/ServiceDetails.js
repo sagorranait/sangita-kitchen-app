@@ -1,17 +1,19 @@
 import { Link, useLoaderData } from 'react-router-dom';
 import { AiFillStar } from "react-icons/ai";
 import { Container } from 'react-bootstrap';
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { StateContext } from '../../StateProvider';
 import toast from 'react-hot-toast';
 import './ServiceDetails.css';
 import ReviewForm from '../../components/ReviewForm/ReviewForm';
 import ReviewValidation from '../../components/ReviewValidation/ReviewValidation';
+import ServiceReviews from '../../components/ServiceReviews/ServiceReviews';
 
 function ServiceDetails() {
    const { user } = useContext(StateContext);
    const {_id, title, thum_image, rating, price, description} = useLoaderData();
    const [sending, setSending] = useState(false);
+   const [serviceReviews, setServiceReviews] = useState([]);
 
    const sendReviewHandler = (event) => {
       event.preventDefault();
@@ -25,8 +27,8 @@ function ServiceDetails() {
             email: user?.email,
             photoURL: user?.photoURL
          },
-         service_id: {
-            _id,
+         service: {
+            sid: _id,
             title,
          },
          rating: userRating,
@@ -44,14 +46,23 @@ function ServiceDetails() {
       .then(res => res.json())
       .then(data => {
             setSending(false);
-
+            setServiceReviews((oldReview)=> [...oldReview, reviewData]);
             if(data.acknowledged){
-               toast.success('Successfully Login.');
+               toast.success('Review Send Successfully.');
                form.reset();
             }
       })
       .catch(error => console.error(error));
    }
+
+   useEffect(() => {
+      fetch(`http://localhost:5000/review/${_id}`)
+      .then(res => res.json())
+      .then(data => console.log(data))
+      .catch(error => console.log(error));
+   }, [_id])
+
+   console.log(serviceReviews);
 
   return (
    <div className='service-details'>
@@ -75,6 +86,7 @@ function ServiceDetails() {
                   <ReviewForm formHandler={sendReviewHandler} loading={sending}/>
                </div>
             }
+            <ServiceReviews reviewData={serviceReviews}/>
          </div>
       </Container>
    </div>
