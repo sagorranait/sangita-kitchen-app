@@ -1,0 +1,12 @@
+#services {
+   background: #E5E8ED;
+   padding: 50px 0 65px;
+}
+
+#services h2{
+   font-weight: 900;
+   font-size: 36px;
+   line-height: 130%;
+   color: #1E212C;
+   margin-bottom: 30px;
+}
