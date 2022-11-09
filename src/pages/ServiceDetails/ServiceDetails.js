@@ -6,6 +6,7 @@ import { StateContext } from '../../StateProvider';
 import toast from 'react-hot-toast';
 import './ServiceDetails.css';
 import ReviewForm from '../../components/ReviewForm/ReviewForm';
+import ReviewValidation from '../../components/ReviewValidation/ReviewValidation';
 
 function ServiceDetails() {
    const { user } = useContext(StateContext);
@@ -66,12 +67,14 @@ function ServiceDetails() {
                <p>{description}</p>
                <Link to='/services' className='kitchen-btn'>Back To Services</Link>
             </div>
-            <div className="reviews">
-               <div className="user-img">
-                  <img src={user?.photoURL} alt={user?.displayName} />
+            {!user ? <ReviewValidation/> : 
+               <div className="reviews">
+                  <div className="user-img">
+                     <img src={user?.photoURL} alt={user?.displayName} />
+                  </div>
+                  <ReviewForm formHandler={sendReviewHandler} loading={sending}/>
                </div>
-               <ReviewForm formHandler={sendReviewHandler} loading={sending}/>
-            </div>
+            }
          </div>
       </Container>
    </div>
