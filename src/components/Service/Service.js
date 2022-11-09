@@ -1,6 +1,7 @@
 import { Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { AiFillStar } from "react-icons/ai";
+import { PhotoProvider, PhotoView } from 'react-photo-view';
 import './Service.css';
 
 function Service({data}) {
@@ -9,7 +10,11 @@ function Service({data}) {
   return (
    <Col sm={12} md={4} lg={4} xl={4} xxl={4}>
       <div className="service">
-         <img src={thum_image} alt={title} />
+         <PhotoProvider>
+            <PhotoView src={thum_image}>
+               <img src={thum_image} alt={title} />
+            </PhotoView>
+         </PhotoProvider>
          <h3>{title}</h3>
          <div className="priceRating">
             <h4>{price}</h4>

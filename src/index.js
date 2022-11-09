@@ -6,6 +6,7 @@ import {routers} from './routes';
 import StateProvider from './StateProvider';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'react-photo-view/dist/react-photo-view.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

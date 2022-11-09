@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { Row } from "react-bootstrap"
+import { Link } from "react-router-dom"
 import Banner from "../../components/Banner/Banner"
 import Brands from "../../components/Brands/Brands"
 import Instagram from "../../components/Instagram/Instagram"
@@ -26,6 +27,7 @@ const Home = () => {
       <ServicesContainer title="Our Services">
           <Row>
             {services.map(service => <Service key={service._id} data={service}/>)}
+            <Link to="/services" className="kitchen-btn services-btn">Explore All Services</Link>
           </Row>
       </ServicesContainer>
       <Instagram/>

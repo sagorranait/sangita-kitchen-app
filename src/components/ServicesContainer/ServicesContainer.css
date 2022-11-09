@@ -1,12 +1,18 @@
-#services {
+#servicesContainer {
    background: #E5E8ED;
-   padding: 50px 0 65px;
+   padding: 50px 0 55px;
 }
 
-#services h2{
+#servicesContainer h2{
    font-weight: 900;
    font-size: 36px;
    line-height: 130%;
    color: #1E212C;
    margin-bottom: 30px;
+}
+
+#servicesContainer .services-btn {
+   display: inline-block;
+   width: 163px;
+   margin: 20px auto 0;
 }

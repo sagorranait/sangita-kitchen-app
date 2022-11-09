@@ -1,5 +1,6 @@
 .service{
    width: 100%;
+   margin-bottom: 30px;
 }
 
 .service img {
@@ -8,6 +9,7 @@
    border-radius: 20px;
    object-fit: cover;
    object-position: center;
+   cursor: pointer;
 }
 
 .service h3{
@@ -37,6 +39,6 @@
    color: #FFD700;
 }
 
-.service p{}
-
-.service a{}
+.service a{
+   display: inline-block;
+}
