@@ -35,6 +35,40 @@ const Reviews = () => {
     .catch((error)=> console.log(error));
    }
 
+   const reviewUpdateHandler = (event, id, value) => {
+      event.preventDefault();
+      const userReview = value.messages;
+      setLoading(true);
+
+      const updatedReview = {
+        review: userReview
+      }
+
+      fetch(`http://localhost:5000/review/${id}`, {
+          method: 'PATCH',
+          headers: {
+              'content-type': 'application/json',
+          },
+          body: JSON.stringify(updatedReview)
+      })
+      .then(res => res.json())
+      .then(data => {
+          console.log(data);
+          if (data.modifiedCount > 0) {
+              setLoading(false);
+              toast.success('Updated Successfully.');
+              const remaining = userReviews.filter(odr => odr._id !== id);
+              const updated = userReviews.find(odr => odr._id === id);
+              updated.review = updatedReview.review;
+
+              const newOrders = [updated, ...remaining];
+              setUserReviews(newOrders);
+          }
+      })
+      .catch(error => console.log(error));
+
+  }
+
   return (
     <div className='reviews-area outlet-page'>
       <h2>My Reviews</h2>
@@ -42,7 +76,16 @@ const Reviews = () => {
           {userReviews.length === 0 ? 
             <h5>No reviews were added</h5> 
             : 
-            userReviews.map(review => <Review key={review._id} buttons={true} data={review} deleteHandler={deleteReviewHandler} load={loading} />)
+            userReviews.map(review => <Review 
+              key={review._id} 
+              buttons={true} 
+              data={review}
+              deleteHandler={deleteReviewHandler} 
+              updateHandler={reviewUpdateHandler} 
+              editId={review._id} 
+              updateData={{message: review.review, rating: review.rating}}
+              load={loading}
+            />)
           }
       </div>
     </div>

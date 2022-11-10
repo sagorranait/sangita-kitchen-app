@@ -18,7 +18,6 @@ function ServiceDetails() {
    const sendReviewHandler = (event) => {
       event.preventDefault();
       const form = event.target;
-      const userRating = form.review.value;
       const userReview = form.message.value;
       setSending(true);
       const reviewData = {
@@ -31,7 +30,6 @@ function ServiceDetails() {
             sid: _id,
             title,
          },
-         rating: userRating,
          review: userReview,
          date: `${new Date()}`,
      }
@@ -81,7 +79,7 @@ function ServiceDetails() {
                   <div className="user-img">
                      <img src={user?.photoURL} alt={user?.displayName} />
                   </div>
-                  <ReviewForm formHandler={sendReviewHandler} loading={sending}/>
+                  <ReviewForm formHandler={sendReviewHandler} loading={sending} edit={false}/>
                </div>
             }
             <ServiceReviews reviewData={serviceReviews}/>

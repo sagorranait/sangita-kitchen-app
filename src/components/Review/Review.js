@@ -1,14 +1,17 @@
 import { useState } from "react";
 import { Modal } from "react-bootstrap";
-import { AiFillStar } from "react-icons/ai";
+import ReviewForm from "../ReviewForm/ReviewForm";
 import './Review.css';
 
-const Review = ({buttons, data, deleteHandler, load}) => {
-   const {_id, user_info, service, review, rating, date} = data;
-   const [show, setShow] = useState(false);
+const Review = ({buttons, data, deleteHandler, updateHandler, editId, updateData, load}) => {
+   const {_id, user_info, service, review, date} = data;
+   const [showDeleteModal, setShowDeleteModal] = useState(false);
+   const [showEditModal, setShowEditModal] = useState(false);
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const editModalClose = () => setShowEditModal(false);
+  const editModalShow = () => setShowEditModal(true);
+  const deleteModalClose = () => setShowDeleteModal(false);
+  const deleteModalShow = () => setShowDeleteModal(true);
 
   return (
    <div className='review'>
@@ -20,12 +23,11 @@ const Review = ({buttons, data, deleteHandler, load}) => {
          <div className="user-content">
             <h3>{user_info.name}</h3>
             <p>{date.slice(0, 10)}</p>
-            <h4>{rating} <AiFillStar/></h4>
          </div>
          {buttons && 
             <div className="action-button">
-               <button className="kitchen-btn">Edit</button>
-               <button className="kitchen-btn" onClick={handleShow}>Delete</button>
+               <button className="kitchen-btn" onClick={editModalShow}>Edit</button>
+               <button className="kitchen-btn" onClick={deleteModalShow}>Delete</button>
             </div>
          }
       </div>
@@ -33,8 +35,27 @@ const Review = ({buttons, data, deleteHandler, load}) => {
          <p>{review}</p>
       </div>
       <Modal
-        show={show}
-        onHide={handleClose}
+        show={showEditModal}
+        onHide={editModalClose}
+        backdrop="static"
+        keyboard={false}
+      >
+         <Modal.Header closeButton>
+          <Modal.Title>Update Review</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+            <ReviewForm 
+               formHandler={updateHandler} 
+               loading={load} 
+               edit={true} 
+               editId={editId} 
+               updateData={updateData}
+            />
+        </Modal.Body>
+      </Modal>
+      <Modal
+        show={showDeleteModal}
+        onHide={deleteModalClose}
         backdrop="static"
         keyboard={false}
       >
@@ -43,7 +64,7 @@ const Review = ({buttons, data, deleteHandler, load}) => {
         </Modal.Body>
         <Modal.Footer className="pt-0 border-top-0">
           <button className="kitchen-btn" onClick={() => deleteHandler(_id)}>{load ? 'Yes...' : 'Yes'}</button>
-          <button className="kitchen-btn" onClick={handleClose}>No</button>
+          <button className="kitchen-btn" onClick={deleteModalClose}>No</button>
         </Modal.Footer>
       </Modal>
    </div>
