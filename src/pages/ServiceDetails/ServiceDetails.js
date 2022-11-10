@@ -7,6 +7,8 @@ import toast from 'react-hot-toast';
 import ReviewForm from '../../components/ReviewForm/ReviewForm';
 import ReviewValidation from '../../components/ReviewValidation/ReviewValidation';
 import ServiceReviews from '../../components/ServiceReviews/ServiceReviews';
+import Loading from '../../components/Loading/Loading';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
 import './ServiceDetails.css';
 
 function ServiceDetails() {
@@ -14,6 +16,7 @@ function ServiceDetails() {
    const {_id, title, thum_image, rating, price, description} = useLoaderData();
    const [sending, setSending] = useState(false);
    const [serviceReviews, setServiceReviews] = useState([]);
+   const [loading, setLoading] = useState(false);
 
    const sendReviewHandler = (event) => {
       event.preventDefault();
@@ -54,36 +57,47 @@ function ServiceDetails() {
    }
 
    useEffect(() => {
+      setLoading(true);
       fetch(`http://localhost:5000/review/${_id}`)
       .then(res => res.json())
-      .then(data => setServiceReviews(data))
+      .then(data => {
+         setLoading(false);
+         setServiceReviews(data);
+      })
       .catch(error => console.log(error));
    }, [_id])
 
   return (
    <div className='service-details'>
       <Container>
-         <div className="details">
-            <div className="content">
-               <img src={thum_image} alt={title} />
-               <h3>{title}</h3>
-               <div className='priceAndReviews'>
-                  <h4>$ {price}</h4>
-                  <h5>{rating} <AiFillStar/></h5>
-               </div>
-               <p>{description}</p>
-               <Link to='/services' className='kitchen-btn'>Back To Services</Link>
-            </div>
-            {!user ? <ReviewValidation/> : 
-               <div className="reviews">
-                  <div className="user-img">
-                     <img src={user?.photoURL} alt={user?.displayName} />
+         {loading ? 
+            <Loading/> : 
+            <div className="details">
+               <div className="content">
+                  <PhotoProvider>
+                     <PhotoView src={thum_image}>
+                        <img src={thum_image} alt={title} />
+                     </PhotoView>
+                  </PhotoProvider>
+                  <h3>{title}</h3>
+                  <div className='priceAndReviews'>
+                     <h4>$ {price}</h4>
+                     <h5>{rating} <AiFillStar/></h5>
                   </div>
-                  <ReviewForm formHandler={sendReviewHandler} loading={sending} edit={false}/>
+                  <p>{description}</p>
+                  <Link to='/services' className='kitchen-btn'>Back To Services</Link>
                </div>
-            }
-            <ServiceReviews reviewData={serviceReviews}/>
-         </div>
+               {!user ? <ReviewValidation/> : 
+                  <div className="reviews">
+                     <div className="user-img">
+                        <img src={user?.photoURL} alt={user?.displayName} />
+                     </div>
+                     <ReviewForm formHandler={sendReviewHandler} loading={sending} edit={false}/>
+                  </div>
+               }
+               <ServiceReviews reviewData={serviceReviews}/>
+            </div>
+         }         
       </Container>
    </div>
   )

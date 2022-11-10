@@ -18,6 +18,7 @@
 
 .service-details .details .content img{
    width: 100%;
+   cursor: pointer;
 }
 
 .service-details .details .content p{
