@@ -4,10 +4,10 @@ import { Container } from 'react-bootstrap';
 import { useContext, useEffect, useState } from 'react';
 import { StateContext } from '../../StateProvider';
 import toast from 'react-hot-toast';
-import './ServiceDetails.css';
 import ReviewForm from '../../components/ReviewForm/ReviewForm';
 import ReviewValidation from '../../components/ReviewValidation/ReviewValidation';
 import ServiceReviews from '../../components/ServiceReviews/ServiceReviews';
+import './ServiceDetails.css';
 
 function ServiceDetails() {
    const { user } = useContext(StateContext);
