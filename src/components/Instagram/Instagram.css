@@ -3,8 +3,6 @@
    padding: 50px 0px 0px;
 }
 
-#instagramArea .followed-link{}
-
 #instagramArea .followed-link p{
    font-weight: 700;
    font-size: 15px;
@@ -13,6 +11,10 @@
    color: #1E212C;
    margin-bottom: 13px;
 }
+
+.instagram-img img {
+   width: 100%;
+ }
 
 #instagramArea .followed-link h2{
    font-weight: 900;
@@ -26,3 +28,119 @@
    font-size: 18px;
    margin: -2px 8px 0px 0px;
 }
+
+
+
+/* Responsive Media Query */
+@media only screen and (max-width: 575.98px) {
+   #instagramArea .followed-link {
+      text-align: center;
+      margin-bottom: 15px;
+      padding: 30px 0;
+   }
+
+   .instagram-img {
+      margin-bottom: 15px;
+  }
+
+  #instagramArea .followed-link h2 {
+      font-size: 30px;
+      margin-bottom: 25px;
+   }
+
+  #instagramArea .followed-link p {
+      font-size: 13px;
+      margin-bottom: 8px;
+   }
+}
+@media screen and (min-width: 576px) and (max-width: 767.98px) {
+   #instagramArea .followed-link {
+      text-align: center;
+      margin-bottom: 15px;
+      padding: 30px 0;
+   }
+
+   .instagram-img {
+      margin-bottom: 15px;
+  }
+
+  #instagramArea .followed-link h2 {
+      font-size: 30px;
+      margin-bottom: 25px;
+   }
+
+  #instagramArea .followed-link p {
+      font-size: 13px;
+      margin-bottom: 8px;
+   }
+}
+@media screen and (min-width: 768px) and (max-width: 992.98px) {
+   #instagramArea .followed-link {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+  }
+
+   .instagram-img {
+      margin-bottom: 15px;
+  }
+
+  .instagram-img img {
+     width: 100%;
+   }
+
+   #instagramArea .followed-link h2 {
+      font-size: 35px;
+      margin-bottom: 40px;
+  }
+
+  #instagramArea .followed-link p {
+      font-size: 14px;
+      margin-bottom: 8px;
+   }
+}
+@media screen and (min-width: 993px) and (max-width: 1200.98px) {
+   #instagramArea .followed-link {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+  }
+
+   .instagram-img img {
+      width: 100%;
+    }
+
+    #instagramArea .followed-link h2 {
+      font-size: 27px;
+  }
+
+  #instagramArea .followed-link p {
+      font-size: 14px;
+   }
+}
+@media screen and (min-width: 1201px) and (max-width: 1399.98px) {
+   #instagramArea .followed-link {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+  }
+  
+   .instagram-img img {
+      width: 100%;
+    }
+
+    #instagramArea .followed-link h2 {
+      font-size: 27px;
+  }
+
+  #instagramArea .followed-link p {
+      font-size: 14px;
+   }
+}
+/* Responsive Media Query */

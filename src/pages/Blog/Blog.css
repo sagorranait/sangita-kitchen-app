@@ -10,3 +10,24 @@
    color: #1E212C;
    margin-bottom: 40px;
 }
+
+/* Responsive Media Query */
+@media only screen and (max-width: 575.98px) {
+   #questions{
+      padding: 30px 0px;
+   }
+   #questions h3 {
+      font-size: 24px;
+      margin-bottom: 25px;
+  }
+}
+@media screen and (min-width: 576px) and (max-width: 767.98px) {
+   #questions{
+      padding: 30px 0px;
+   }
+   #questions h3 {
+      font-size: 24px;
+      margin-bottom: 25px;
+  }
+}
+/* Responsive Media Query */

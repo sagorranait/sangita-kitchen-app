@@ -2,7 +2,7 @@
 
 Our best Reviewing recipes including Beef-Samosas, Chicken Curry, Fish Curry and more.
 
-Live Link :
+Live Link : [https://sangita-kitchen-app.web.app/](https://sangita-kitchen-app.web.app/).
 
  ## Features
  - JWT Authentication is the project's standout feature because it prevents hackers from accessing your personal data.

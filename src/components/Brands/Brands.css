@@ -6,3 +6,21 @@
 #brands .brand{
    cursor: pointer;
 }
+
+/* Responsive Media Query */
+@media only screen and (max-width: 575.98px) {
+   #brands {
+      padding: 25px 0px;
+  }
+}
+@media screen and (min-width: 576px) and (max-width: 767.98px) {
+   #brands {
+      padding: 25px 0px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 992.98px) {
+   #brands .brand img{
+      width: 100%;
+  }
+}
+/* Responsive Media Query */
