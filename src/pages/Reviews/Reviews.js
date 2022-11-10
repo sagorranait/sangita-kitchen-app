@@ -3,6 +3,7 @@ import Review from '../../components/Review/Review'
 import { StateContext } from '../../StateProvider';
 import toast from 'react-hot-toast';
 import './Reviews.css'
+import Loading from '../../components/Loading/Loading';
 
 const Reviews = () => {
   const { user } = useContext(StateContext);
@@ -10,9 +11,11 @@ const Reviews = () => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    setLoading(true)
     fetch(`http://localhost:5000/review?email=${user?.email}`)
     .then(res => res.json())
     .then(data => {
+      setLoading(false)
       setUserReviews(data);
     })
     .catch((error)=> console.log(error));
@@ -73,7 +76,7 @@ const Reviews = () => {
     <div className='reviews-area outlet-page'>
       <h2>My Reviews</h2>
       <div className='reviews'>
-          {userReviews.length === 0 ? 
+          {loading ? <Loading/> : userReviews.length === 0 ? 
             <h5>No reviews were added</h5> 
             : 
             userReviews.map(review => <Review 
@@ -85,8 +88,9 @@ const Reviews = () => {
               editId={review._id} 
               updateData={{message: review.review, rating: review.rating}}
               load={loading}
-            />)
-          }
+            />
+          )}
+          
       </div>
     </div>
   )
