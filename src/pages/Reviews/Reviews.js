@@ -2,10 +2,12 @@ import { useContext, useEffect, useState } from 'react';
 import Review from '../../components/Review/Review'
 import { StateContext } from '../../StateProvider';
 import toast from 'react-hot-toast';
-import './Reviews.css'
 import Loading from '../../components/Loading/Loading';
+import usePageTitle from '../../hooks/usePageTitle';
+import './Reviews.css'
 
 const Reviews = () => {
+  usePageTitle('My Reviews');
   const { user } = useContext(StateContext);
   const [userReviews, setUserReviews] = useState([]);
   const [loading, setLoading] = useState(false);

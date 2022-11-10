@@ -6,8 +6,10 @@ import Brands from "../../components/Brands/Brands"
 import Instagram from "../../components/Instagram/Instagram"
 import Service from "../../components/Service/Service"
 import ServicesContainer from "../../components/ServicesContainer/ServicesContainer"
+import usePageTitle from "../../hooks/usePageTitle"
 
 const Home = () => {
+  usePageTitle('');
   const [services, setServices] = useState([]);
 
   useEffect(() => {

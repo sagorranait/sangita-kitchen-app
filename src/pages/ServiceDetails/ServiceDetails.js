@@ -9,11 +9,13 @@ import ReviewValidation from '../../components/ReviewValidation/ReviewValidation
 import ServiceReviews from '../../components/ServiceReviews/ServiceReviews';
 import Loading from '../../components/Loading/Loading';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
+import usePageTitle from '../../hooks/usePageTitle';
 import './ServiceDetails.css';
 
 function ServiceDetails() {
    const { user } = useContext(StateContext);
    const {_id, title, thum_image, rating, price, description} = useLoaderData();
+   usePageTitle(title)
    const [sending, setSending] = useState(false);
    const [serviceReviews, setServiceReviews] = useState([]);
    const [loading, setLoading] = useState(false);

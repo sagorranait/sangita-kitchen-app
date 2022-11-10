@@ -4,9 +4,11 @@ import Brands from '../../components/Brands/Brands';
 import Service from '../../components/Service/Service';
 import ServicesContainer from '../../components/ServicesContainer/ServicesContainer';
 import Loading from '../../components/Loading/Loading'
+import usePageTitle from '../../hooks/usePageTitle';
 import './Services.css'
 
 const Services = () => {
+   usePageTitle('Services');
    const [allServices, setAllServices] = useState([]);
    const [load, setLoad] = useState(false);
 

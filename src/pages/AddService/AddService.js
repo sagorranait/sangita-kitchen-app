@@ -2,9 +2,11 @@ import { useState } from 'react';
 import { Alert, Form } from 'react-bootstrap';
 import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
+import usePageTitle from '../../hooks/usePageTitle';
 import './AddService.css';
 
 const AddService = () => {
+  usePageTitle('Add New Service');
   const [adding, setAdding] = useState(false);
   const [message, setMessage] = useState(false);
 

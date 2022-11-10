@@ -2,9 +2,11 @@ import { Accordion, Container } from 'react-bootstrap';
 import Brands from '../../components/Brands/Brands';
 import Instagram from '../../components/Instagram/Instagram';
 import Question from '../../components/Question/Question';
+import usePageTitle from '../../hooks/usePageTitle';
 import './Blog.css';
 
 const Blog = () => {
+  usePageTitle('Blog');
   return (
     <>
       <section id='questions'>

@@ -3,9 +3,11 @@ import { useNavigate } from 'react-router-dom';
 import { StateContext } from '../../StateProvider';
 import { Form } from 'react-bootstrap';
 import toast from 'react-hot-toast';
+import usePageTitle from '../../hooks/usePageTitle';
 import './Profile.css'
 
 const Profile = () => {
+  usePageTitle('My Profile');
    const navigate = useNavigate();
    const { user, updateUserProfile } = useContext(StateContext);
    const [updating, setUpdating] = useState(false);
