@@ -107,6 +107,9 @@
    #footerArea .footer-links .links a, #footerArea .footer-links .info p {
       font-size: 14px;
   }
+  #footerArea .footer-links.social .stores-img img {
+      padding-left: 5px;
+   }
 }
 @media screen and (min-width: 576px) and (max-width: 767.98px) {
    #footerArea {
@@ -131,6 +134,9 @@
    #footerArea .footer-links .info p {
       font-size: 14px;
   }
+  #footerArea .footer-links.social .stores-img img {
+      padding-left: 5px;
+   }
 }
 @media screen and (min-width: 768px) and (max-width: 992.98px) {
    #footerArea .footer-links {

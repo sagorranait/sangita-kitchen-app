@@ -114,6 +114,9 @@
    .review .user-review {
       padding: 10px 0px 24px;
   }
+  .review .user-info {
+      justify-content: center;
+   }
 }
 @media screen and (min-width: 768px) and (max-width: 992.98px) {
    .review .action-button button {
