@@ -25,7 +25,7 @@ const DashBoard = () => {
     <section id='dashboard'>
          <Container>
             <Row>
-               <Col sm={12} md={3} lg={3} xl={3} xxl={3}>
+               <Col sm={12} md={5} lg={3} xl={3} xxl={3}>
                   <div className='sidebar'>
                      <div className="user-info">
                         <img src={user?.photoURL} alt={user?.displayName} />
@@ -56,7 +56,7 @@ const DashBoard = () => {
                      </div>
                   </div>
                </Col>
-               <Col sm={12} md={9} lg={9} xl={9} xxl={9}>
+               <Col sm={12} md={7} lg={9} xl={9} xxl={9}>
                   <Outlet/>
                </Col>
             </Row>

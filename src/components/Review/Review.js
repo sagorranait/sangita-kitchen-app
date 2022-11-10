@@ -17,12 +17,14 @@ const Review = ({buttons, data, deleteHandler, updateHandler, editId, updateData
    <div className='review'>
       {buttons && <h3>For : <span>{service.title}</span></h3>}
       <div className="user-info">
-         <div className="user-img">
-            <img src={user_info.photoURL} alt={user_info.name}/>
-         </div>
-         <div className="user-content">
-            <h3>{user_info.name}</h3>
-            <p>{date.slice(0, 10)}</p>
+         <div className="user-text">
+            <div className="user-img">
+               <img src={user_info.photoURL} alt={user_info.name}/>
+            </div>
+            <div className="user-content">
+               <h3>{user_info.name}</h3>
+               <p>{date.slice(0, 10)}</p>
+            </div>
          </div>
          {buttons && 
             <div className="action-button">
