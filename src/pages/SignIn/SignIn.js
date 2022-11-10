@@ -21,11 +21,26 @@ const SignIn = () => {
     const password = e.target.password.value;
 
     signIn(email, password)
-    .then((_) => {
+    .then((result) => {
+      const user = result.user;
       setLogging(false);
       toast.success('Successfully Login.');
+
+      fetch('http://localhost:5000/jwt', {
+          method: 'POST',
+          headers: {
+              'content-type': 'application/json'
+          },
+          body: JSON.stringify({
+            email: user.email
+        })
+      })
+      .then(res => res.json())
+      .then(data => {
+          localStorage.setItem('access-token', data.token);
+          navigate(from, { replace: true });
+      });
       e.target.reset();
-      navigate(from, { replace: true });
     })
     .catch((error) => {
       setLogging(false);
