@@ -6,7 +6,7 @@ function ServiceReviews({reviewData}) {
     <div className='service-reviews'>
       <h2>Reviews ({reviewData.length})</h2>
       {reviewData.length !== 0 ? 
-         reviewData.map(reviews => <Review key={reviews._id} buttons={false} data={reviews} />)
+         reviewData.map((reviews, index) => <Review key={index} buttons={false} data={reviews} />)
          : <h6>No reviews for this service.</h6>}
     </div>
   )
