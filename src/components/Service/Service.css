@@ -42,3 +42,79 @@
 .service a{
    display: inline-block;
 }
+
+/* Responsive Media Query */
+@media only screen and (max-width: 575.98px) {
+   .service {
+      text-align: center;
+  }
+
+  .service .priceRating {
+      justify-content: space-around;
+   }
+
+   .service img {
+      height: 300px;
+  }
+
+  .service h3 {
+      font-size: 22px;
+   }
+}
+@media screen and (min-width: 576px) and (max-width: 767.98px) {
+   .service {
+      text-align: center;
+  }
+
+  .service .priceRating {
+      justify-content: space-around;
+   }
+
+   .service img {
+      height: 300px;
+  }
+
+  .service h3 {
+      font-size: 22px;
+   }
+}
+@media screen and (min-width: 768px) and (max-width: 992.98px) {
+   .service img {
+      height: 280px;
+  }
+
+  .service h3 {
+      font-size: 20px;
+   }
+
+   .service p {
+      font-size: 14px;
+   }
+}
+@media screen and (min-width: 993px) and (max-width: 1200.98px) {
+   .service img {
+      height: 320px;
+  }
+
+  .service h3 {
+      font-size: 22px;
+   }
+
+   .service p {
+      font-size: 15px;
+   }
+}
+@media screen and (min-width: 1201px) and (max-width: 1399.98px) {
+   .service img {
+      height: 320px;
+  }
+
+  .service h3 {
+      font-size: 22px;
+   }
+
+   .service p {
+      font-size: 15px;
+   }
+}
+/* Responsive Media Query */

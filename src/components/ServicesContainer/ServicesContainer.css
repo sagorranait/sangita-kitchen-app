@@ -16,3 +16,31 @@
    width: 163px;
    margin: 20px auto 0;
 }
+
+/* Responsive Media Query */
+@media only screen and (max-width: 575.98px) {
+   #servicesContainer {
+      padding: 30px 0 40px;
+  }
+
+   #servicesContainer h2 {
+      font-size: 30px;
+      text-align: center;
+  }
+}
+@media screen and (min-width: 576px) and (max-width: 767.98px) {
+   #servicesContainer {
+      padding: 30px 0 40px;
+  }
+  
+   #servicesContainer h2 {
+      font-size: 30px;
+      text-align: center;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 992.98px) {
+   #servicesContainer h2 {
+      font-size: 30px;
+  }
+}
+/* Responsive Media Query */
