@@ -14,7 +14,7 @@ const Services = () => {
 
    useEffect(() => {
     setLoad(true);
-      fetch('http://localhost:5000/services')
+      fetch('https://sangitas-kitchen-server.vercel.app/services')
       .then(res => res.json())
       .then(data => {
         setLoad(false);

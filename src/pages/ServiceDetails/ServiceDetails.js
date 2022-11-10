@@ -39,7 +39,7 @@ function ServiceDetails() {
          date: `${new Date()}`,
      }
 
-     fetch('http://localhost:5000/review', {
+     fetch('https://sangitas-kitchen-server.vercel.app/review', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -60,7 +60,7 @@ function ServiceDetails() {
 
    useEffect(() => {
       setLoading(true);
-      fetch(`http://localhost:5000/review/${_id}`)
+      fetch(`https://sangitas-kitchen-server.vercel.app/review/${_id}`)
       .then(res => res.json())
       .then(data => {
          setLoading(false);
@@ -106,7 +106,7 @@ function ServiceDetails() {
 }
 
 export async function getServiceDetails({params}) {
-   const response = await fetch('http://localhost:5000/services/' + params.id);
+   const response = await fetch('https://sangitas-kitchen-server.vercel.app/services/' + params.id);
    if (!response.ok) {
      throw new Error('Failed to fetch post.');
    }

@@ -26,7 +26,7 @@ const SignIn = () => {
       setLogging(false);
       toast.success('Successfully Login.');
 
-      fetch('http://localhost:5000/jwt', {
+      fetch('https://sangitas-kitchen-server.vercel.app/jwt', {
           method: 'POST',
           headers: {
               'content-type': 'application/json'

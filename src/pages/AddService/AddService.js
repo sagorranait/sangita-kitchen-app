@@ -21,7 +21,7 @@ const AddService = () => {
     setAdding(true);
     const newService = {title, thum_image, rating, price, description};
 
-    fetch('http://localhost:5000/addService', {
+    fetch('https://sangitas-kitchen-server.vercel.app/addService', {
           method: 'POST',
           headers: {
               'content-type': 'application/json',
