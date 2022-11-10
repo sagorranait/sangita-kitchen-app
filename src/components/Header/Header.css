@@ -86,7 +86,7 @@
 }
 
 .nav-user .nav-link {
-   width: 100px;
+   width: 110px;
 }
 }
 @media screen and (min-width: 576px) and (max-width: 767.98px) {
@@ -123,7 +123,7 @@
 }
 
 .nav-user .nav-link {
-   width: 100px;
+   width: 110px;
 }
 }
 @media screen and (min-width: 768px) and (max-width: 992.98px) {
@@ -141,7 +141,7 @@
    }
 
    .nav-user .nav-link {
-      width: 100px;
+      width: 110px;
    }
 
    button:focus:not(:focus-visible) {
