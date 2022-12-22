@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { 
    Container, 
    Nav, 
@@ -14,6 +14,7 @@ import './Header.css';
 function Header() {
   const navigate = useNavigate();
   const {user, signOutUser} = useContext(StateContext);
+  const [expended, setExpended] = useState(false);
 
   const userSignOut = () => {
       signOutUser()
@@ -24,20 +25,22 @@ function Header() {
          const errorMessage = error.message;
          toast.error(errorMessage?.split('/')[1]?.replace(').', '').split('-').join(' '));
       });
+      setExpended(false);
   }
 
   return (
-   <Navbar expand="lg">
+   <Navbar expanded={expended} expand="lg">
       <Container>
          <Link to='/'>
             <img alt="Cloud Kitchen (Classic Food)" src={Logo} className="d-inline-block align-top kitchen-logo" />
          </Link>
-        <Navbar.Toggle aria-controls="basic-navbar-nav"><FaBars/></Navbar.Toggle>
+        <Navbar.Toggle onClick={() => setExpended(expended ? false : "expanded")} aria-controls="basic-navbar-nav"><FaBars/></Navbar.Toggle>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
             <NavLink 
                to='/' 
                className={`nav-link ${({ isActive }) => isActive ? "active" : ""}` }
+               onClick={() => setExpended(false)}
                end
             >
                Home
@@ -45,6 +48,7 @@ function Header() {
             <NavLink 
                to='/blogs' 
                className={`nav-link ${({ isActive }) => isActive ? "active" : ""}` }
+               onClick={() => setExpended(false)}
             >
                Blog
             </NavLink>
@@ -54,18 +58,21 @@ function Header() {
                   <NavLink 
                      to='/dashboard/profile' 
                      className={`nav-link ${({ isActive }) => isActive ? "active" : ""}` }
+                     onClick={() => setExpended(false)}
                   >
                      My Profile
                   </NavLink>
                   <NavLink 
                      to='/dashboard/addService' 
                      className={`nav-link ${({ isActive }) => isActive ? "active" : ""}` }
+                     onClick={() => setExpended(false)}
                   >
                      Add Service
                   </NavLink>
                   <NavLink 
                      to='/dashboard/reviews' 
                      className={`nav-link ${({ isActive }) => isActive ? "active" : ""}` }
+                     onClick={() => setExpended(false)}
                   >
                      My Reviews
                   </NavLink>
@@ -77,7 +84,7 @@ function Header() {
             {
                user?.email || user?.displayName ? 
                <Link className='nav-link' to='/signin' onClick={userSignOut}>Sign Out</Link>
-               : <Link className='nav-link' to='/signin'>Sign In</Link>
+               : <Link onClick={() => setExpended(false)} className='nav-link' to='/signin'>Sign In</Link>
             }
         </div>
         </Navbar.Collapse>
