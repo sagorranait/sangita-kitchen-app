@@ -3,6 +3,7 @@ import { Row } from "react-bootstrap"
 import { Link } from "react-router-dom"
 import Banner from "../../components/Banner/Banner"
 import Brands from "../../components/Brands/Brands"
+import Feedbacks from "../../components/Feedbacks/Feedbacks"
 import Instagram from "../../components/Instagram/Instagram"
 import Loading from "../../components/Loading/Loading"
 import Service from "../../components/Service/Service"
@@ -40,6 +41,7 @@ const Home = () => {
             </>}
           </Row>
       </ServicesContainer>
+      <Feedbacks/>
       <Instagram/>
       <Brands/>
     </>
